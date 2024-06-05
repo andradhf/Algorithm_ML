@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ni boss!!!</title>
+</head>
+<body>
+<script >
+  function bubbleSortASCInt(arr) {
+    // Show before
+    console.log("==Sebelum==");
+    console.log(arr.join(", "));
+
+    // Logic
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - 1; j++) {
+            // Jika nilai saat ini lebih besar dari selanjutnya
+          // menggunakan if statement
+            //if (arr[j] > arr[j + 1]) {
+                // Ditukar
+                //let temp = arr[j];
+                //arr[j] = arr[j + 1];
+                //arr[j + 1] = temp;
+            //}
+
+          //tenary operator
+          arr[j] > arr[j+1] ? ([arr[j], arr[j+1] ] = [arr[j+1], arr[j]]) : null
+        }
+    }
+          
+
+    // Show after
+    console.log("==Sesudah==");
+    console.log(arr.join(", "));
+}
+
+// Contoh penggunaan
+let nilai = ["Budi", "Ani", "Citra", "David", "Eva"];
+bubbleSortASCInt(nilai);
+
+
+</script>
+
+    
+
+
+</body>
+</html>

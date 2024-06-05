@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertion
+    </title>
+</head>
+<body>
+    
+    <script>
+        function intertionASC(arr){
+            console.log("==sebelum==")
+            console.log(arr.join(", "))
+
+        //logic
+        for (let i = 1 ; i < arr.length; i++){
+            let j = i;
+            console.log(j)
+            while (j > 0){
+                if (arr[j] < arr[j-1]){
+                    let temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                    console.log(temp)
+                }else{
+                    j--;
+                }
+            }
+        }
+        console.log("==sesudah==")
+        console.log(arr.join(", "))
+        }
+
+        function insertionFor(arr){
+            console.log("==sebelum==")
+            console.log(arr.join(", "))
+
+        //logic
+        for (let i = 1 ; i < arr.length; i++){
+            for( let j = i ; j > 0 ; j--){
+                arr[j] < arr[j-1] ? ([arr[j], arr[j-1]] = [arr[j-1],arr[j]]):null
+            }
+        }
+        console.log("==sesudah==")
+        console.log(arr.join(", "))
+        }
+        let nilai = [90, 54, 67, 98, 76];
+        insertionFor(nilai)
+    </script>
+</body>
+</html>

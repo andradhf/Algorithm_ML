@@ -1,0 +1,39 @@
+bubble short java 
+class cBubbleSort {
+
+    public static void main(String[] args){
+      int nilai[] = {99, 76, 87,69, 80}
+      bubbleSortASCInt(nilai)
+
+    }
+
+    public static void bubbleSortASCInt(int[] bilangan){
+      //show before
+      System.out.println("==Sebelum==")
+      for (int bill :  bilangan){
+        System.out.print(bill + ",")
+      }
+
+      //logic
+      for (int i = 0; i < bilangan.length; i ++){
+        for( int j = 0; j < bilangan.length-1; j++){
+          //jika nilai saat ini lebih besar dari selanjutnya
+          if( bilangan[j] > bilangan[j+1]){
+            //ditukar
+            int tampung = bilangan[j]
+            bilangan[j] = bilangan[j+1]
+            bilangan[j+1] = tampungan
+          }
+        }
+      }
+
+
+      //show after
+      System.out.println("==Sesudah==")
+      for (int bill :  bilangan){
+        System.out.print(bill + ",")
+      }
+    }
+  }
+
+  

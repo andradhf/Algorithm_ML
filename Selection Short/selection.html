@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function selectionShort(arr){
+            //show before
+            console.log('==Before==');
+            console.log(arr.join(','));
+
+            //logic
+            for (let j = 0; j < arr.length ;j ++){
+                loc_selected = j
+                    for( let i = j ; i < arr.length ; i++){
+                       // if ( arr[loc_selected] < arr[i]){
+                            //loc_selected = i
+                        //}
+                        arr[loc_selected] < arr [i] ? (arr[j], arr[loc_selected] = arr[loc_selected], arr[j]) : loc_selected = i
+                    }
+                    //swap
+                    //let shelter = arr[j]
+                    //arr[j] = arr[loc_selected]
+                    //arr[loc_selected] = shelter
+
+            }
+            console.log('==after==');
+            console.log(arr.join(','));
+        }
+
+        let score = [51, 66, 75, 80, 96]
+        selectionShort(score);
+    </script>
+    
+</body>
+</html>

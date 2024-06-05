@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge</title>
+</head>
+<body>
+    
+    <script>
+        function mergeShort(arr) {
+            console.log('==Sebelum==');
+            console.log(arr.join(', '));
+        
+            arr = separate(arr);
+        
+            console.log('==Sesudah==');
+            console.log(arr.join(', '));
+        }
+        
+        function separate(arr) {
+            if (arr.length <= 1) {
+                return arr;
+            }
+        
+            let midScr = Math.floor(arr.length / 2);
+            let left = arr.slice(0, midScr);
+            let right = arr.slice(midScr);
+        
+            // Recursive calls to separate
+            left = separate(left);
+            right = separate(right);
+        
+            // Merge the separated arrays
+            let hasil = merge(left, right);
+        
+            // Return the merged result
+            return hasil;
+        }
+        
+        function merge(left, right) {
+            let mergeRsl = [];
+            let leftIndex = 0;
+            let rightIndex = 0;
+        
+            while (leftIndex < left.length && rightIndex < right.length) {
+                if (left[leftIndex] < right[rightIndex]) {
+                    mergeRsl.push(left[leftIndex]);
+                    leftIndex++;
+                } else {
+                    mergeRsl.push(right[rightIndex]);
+                    rightIndex++;
+                }
+            }
+        
+            // Append the remaining elements from left and right (if any)
+            mergeRsl = mergeRsl.concat(left.slice(leftIndex), right.slice(rightIndex));
+        
+            return mergeRsl;
+        }
+        
+        // Example usage:
+        const arr = [38, 27, 43, 3, 9, 82, 10];
+        mergeShort(arr);
+        
+        let nilai = [90, 54, 67, 98, 76];
+        mergeShort(nilai);
+    </script>
+</body>
+</html>
