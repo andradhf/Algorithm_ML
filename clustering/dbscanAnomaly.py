@@ -57,7 +57,6 @@ if user_input == 'y':
     output = plt.scatter(x_scaled[:, 0], x_scaled[:, 1], s=100, c=card_x_sample.kluster, marker="o", alpha=1,)
     plt.title("Hasil Klustering DBSCAN")
     plt.colorbar(output)
-    plt.legend()
     plt.show()
 else:
     print("Selesai.")
