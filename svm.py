@@ -1,0 +1,1 @@
+print("hello this is new algorithm we develop")
