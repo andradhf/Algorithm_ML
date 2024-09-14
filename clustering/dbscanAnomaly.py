@@ -45,7 +45,9 @@ print("Jumlah transaksi tidak wajar (cluster -1): " + str(n_outliers))
 print("\nAnggota dari cluster -1 (outliers):")
 for i in range(0, len(card_x_sample)):
     if dbscans.labels_[i] == -1:
-        print("idobservasi : " + str(card.values[i, 0]) + " Nukleocapsid : " + str(card.values[i, 1]) + " Spike : " + str(card.values[i, 2]) + ", Cluster : " + str(dbscans.labels_[i]))
+        # Convert numeric date back to datetime
+        transaction_date = pd.to_datetime(card.values[i, 6], unit='s')
+        print("Transaction Date : " + str(transaction_date) + " Merchant : " + str(card.values[i, 4]) + " Amount : " + str(card.values[i, 7]) + ", Cluster : " + str(dbscans.labels_[i]))
         print("-------------------------------------------------------------------------------------------------------------")
 
 # Ask user if they want to see the visualization
